@@ -409,7 +409,7 @@ For details, see the [LICENSE](LICENSE) file.
 
 ## Author
 
-**JEEVANANTHAM P**
+**JEEVANANTHAM**
 
 Full Stack Developer & AI/ML Engineer
 
@@ -421,7 +421,7 @@ Full Stack Developer & AI/ML Engineer
 
 <div align="center">
 
-### Made with ❤️ by JEEVANANTHAM P
+### Made with ❤️ by JEEVANANTHAM
 
 [⬆ Back to Top](#professional-portfolio)
 

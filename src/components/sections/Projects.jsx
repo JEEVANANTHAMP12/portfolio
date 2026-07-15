@@ -4,220 +4,94 @@ import { useTheme } from '../../context/ThemeContext';
 
 const projects = [
     {
-        title: "AI-Powered Chat Application",
-        description: "A real-time chat application with AI integration for smart responses. Built with React, Node.js, and OpenAI API.",
-        tags: ["React", "Node.js", "OpenAI", "Socket.io"],
-        image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80",
-        link: "#",
-        github: "#"
+        title: 'AI-Powered Chat Application',
+        description: 'A conversational web app concept with a React interface, server-side message handling, and AI-assisted responses.',
+        tags: ['React', 'Node.js', 'OpenAI', 'API'],
+        image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=900&q=80',
     },
     {
-        title: "E-Commerce Platform",
-        description: "Full-stack e-commerce solution with payment integration, inventory management, and admin dashboard.",
-        tags: ["Next.js", "MongoDB", "Stripe", "TailwindCSS"],
-        image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&q=80",
-        link: "#",
-        github: "#"
+        title: 'Task Management Dashboard',
+        description: 'A productivity dashboard layout with task states, team-focused views, and responsive UI patterns.',
+        tags: ['React', 'Tailwind CSS', 'Firebase', 'UI'],
+        image: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=900&q=80',
     },
     {
-        title: "ML Image Classifier",
-        description: "Deep learning model for image classification using TensorFlow. Deployed with Flask API and React frontend.",
-        tags: ["Python", "TensorFlow", "Flask", "React"],
-        image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800&q=80",
-        link: "#",
-        github: "#"
+        title: 'ML Image Classifier',
+        description: 'A machine learning prototype combining a Flask API with a simple frontend for submitting and reviewing predictions.',
+        tags: ['Python', 'Flask', 'ML', 'React'],
+        image: 'https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=900&q=80',
     },
     {
-        title: "Task Management Dashboard",
-        description: "Collaborative project management tool with real-time updates, drag-and-drop, and team analytics.",
-        tags: ["React", "Firebase", "Framer Motion", "Chart.js"],
-        image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&q=80",
-        link: "#",
-        github: "#"
+        title: 'Data Analytics Dashboard',
+        description: 'An analytics interface for exploring filtered data views, metrics, and charts from structured datasets.',
+        tags: ['Python', 'Pandas', 'Charts', 'React'],
+        image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=900&q=80',
     },
-    {
-        title: "Portfolio Website",
-        description: "Modern, responsive portfolio website with smooth animations and optimized performance.",
-        tags: ["React", "TailwindCSS", "Framer Motion", "Vite"],
-        image: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800&q=80",
-        link: "#",
-        github: "#"
-    },
-    {
-        title: "Data Analytics Dashboard",
-        description: "Interactive dashboard for visualizing complex datasets with real-time filtering and export capabilities.",
-        tags: ["Python", "Pandas", "Plotly", "React"],
-        image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
-        link: "#",
-        github: "#"
-    }
 ];
-
-const ProjectCard = ({ project, index }) => {
-    const { isDark } = useTheme();
-    return (
-        <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] }}
-            viewport={{ once: true, amount: 0.15, margin: "0px 0px -100px 0px" }}
-            className="group h-full"
-        >
-            <div className={`relative h-full backdrop-blur-xl rounded-2xl overflow-hidden transition-all duration-500 flex flex-col hover:shadow-2xl hover:shadow-purple-500/20 ${
-                isDark
-                  ? 'bg-gradient-to-br from-white/5 to-white/[0.02] border border-gray-400/40 hover:border-purple-400/50'
-                  : 'bg-gradient-to-br from-black/5 to-black/[0.02] border border-gray-600/40 hover:border-purple-500/50'
-              }`}>
-                {/* Project Image */}
-                <div className="h-52 relative overflow-hidden flex-shrink-0">
-                    <img 
-                        src={project.image} 
-                        alt={project.title}
-                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                    />
-                    <div className={`absolute inset-0 ${
-                        isDark ? 'bg-black/30' : 'bg-white/30'
-                    }`} />
-                    <div 
-                        className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                        style={{ animation: "shimmer 2s infinite" }}
-                    />
-                    
-                    {/* Hover overlay with links */}
-                    <motion.div 
-                        className="absolute inset-0 bg-black/60 backdrop-blur-md flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300"
-                    >
-                        <motion.a
-                            href={project.link}
-                            className="px-6 py-3 bg-white text-black rounded-full font-semibold text-sm flex items-center gap-2"
-                            whileHover={{ scale: 1.05 }}
-                            whileTap={{ scale: 0.95 }}
-                        >
-                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                            </svg>
-                            Visit Project
-                        </motion.a>
-                    </motion.div>
-                </div>
-                
-                {/* Project Info */}
-                <div className="p-6 flex flex-col flex-grow">
-                    <h3 className={`text-xl font-bold mb-3 group-hover:text-purple-400 transition-colors duration-300 ${
-                        isDark ? 'text-white' : 'text-black'
-                    }`}>
-                        {project.title}
-                    </h3>
-                    <p className={`text-sm leading-relaxed mb-4 line-clamp-3 flex-grow transition-colors duration-300 ${
-                        isDark ? 'text-gray-400' : 'text-gray-600'
-                    }`}>
-                        {project.description}
-                    </p>
-                    
-                    {/* Tags */}
-                    <div className="flex flex-wrap gap-2 mt-auto">
-                        {project.tags.map((tag, idx) => (
-                            <span 
-                                key={idx}
-                                className={`px-3 py-1 text-xs rounded-full border transition-colors duration-300 ${
-                                    isDark
-                                      ? 'bg-white/5 text-gray-300 border-gray-400/30'
-                                      : 'bg-black/5 text-gray-700 border-gray-600/30'
-                                }`}
-                            >
-                                {tag}
-                            </span>
-                        ))}
-                    </div>
-                </div>
-            </div>
-        </motion.div>
-    );
-};
 
 const Projects = () => {
     const { isDark } = useTheme();
+
     return (
-        <section id="projects" className="min-h-screen py-16 md:py-20 lg:py-24 relative overflow-hidden">
-            {/* Background decoration */}
-            <div className="absolute inset-0">
-                <div className="absolute top-1/4 left-0 w-96 h-96 bg-purple-500/10 rounded-full blur-[120px]" style={{ animation: "blurPulse 6s ease-in-out infinite" }} />
-                <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-blue-500/10 rounded-full blur-[120px]" style={{ animation: "blurPulse 8s ease-in-out infinite" }} />
-            </div>
-
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 relative z-10">
-                {/* Section Header */}
-                <motion.div
-                    initial={{ opacity: 0, y: 50 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-                    viewport={{ once: true, amount: 0.2, margin: "0px 0px -80px 0px" }}
-                    className="text-center mb-16"
-                >
-                    <motion.span 
-                        className={`inline-block text-sm uppercase tracking-widest mb-4 font-medium transition-colors duration-300 ${
-                            isDark ? 'text-purple-400' : 'text-purple-600'
-                        }`}
-                        initial={{ opacity: 0, y: -10 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, ease: "easeOut" }}
-                        viewport={{ once: true, margin: "0px 0px -30px 0px" }}
-                    >
-                        My Work
-                    </motion.span>
-                    <h2 className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-6 transition-colors duration-300 ${
-                        isDark ? 'text-white' : 'text-black'
-                    }`}>
-                        Featured <span className="bg-gradient-to-r from-blue-400 via-purple-500 to-pink-400 bg-clip-text text-transparent">Projects</span>
-                    </h2>
-                    <p className={`text-xl max-w-2xl mx-auto transition-colors duration-300 ${
-                        isDark ? 'text-gray-400' : 'text-gray-600'
-                    }`}>
-                        A collection of projects that showcase my skills in full-stack development, AI/ML, and modern web technologies.
-                    </p>
-                </motion.div>
-
-                {/* Projects Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 relative">
-                    {projects.map((project, index) => (
-                        <ProjectCard key={index} project={project} index={index} />
-                    ))}
-                </div>
-
-                {/* View More Button */}
-                <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.7, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-                    viewport={{ once: true, amount: 0.5, margin: "0px 0px -50px 0px" }}
-                    className="text-center mt-12"
-                >
-                    <motion.a
+        <section id="projects" className={`relative py-24 md:py-32 ${isDark ? 'bg-neutral-950' : 'bg-white'}`}>
+            <motion.div
+                className="mx-auto max-w-7xl px-4 sm:px-6 md:px-8"
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.15 }}
+                transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
+            >
+                <div className="flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
+                    <div className="max-w-3xl">
+                        <p className={`section-eyebrow ${isDark ? 'text-cyan-300' : 'text-cyan-700'}`}>Projects</p>
+                        <h2 className={`mt-3 text-4xl font-black tracking-tight sm:text-5xl ${isDark ? 'text-white' : 'text-slate-950'}`}>
+                            Selected work and project concepts.
+                        </h2>
+                        <p className={`mt-5 text-lg leading-8 ${isDark ? 'text-slate-300' : 'text-slate-600'}`}>
+                            A compact view of the kinds of applications I build: interfaces, dashboards, AI prototypes, and data-backed tools.
+                        </p>
+                    </div>
+                    <a
                         href="https://github.com/jeevananthamp12"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className={`inline-flex items-center gap-2 px-8 py-4 backdrop-blur-xl rounded-full font-semibold border transition-all ${
-                            isDark
-                              ? 'bg-white/5 text-white border-white/10 hover:border-white/30 hover:bg-white/10'
-                              : 'bg-black/5 text-black border-black/10 hover:border-black/30 hover:bg-black/10'
-                        }`}
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
+                        className={`inline-flex w-fit items-center rounded-lg border px-5 py-3 text-sm font-bold transition ${isDark ? 'border-white/15 text-white hover:bg-white/10' : 'border-slate-300 text-slate-950 hover:bg-slate-100'}`}
                     >
-                        <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+                        View GitHub
+                        <svg className="ml-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                         </svg>
-                        View All Projects on GitHub
-                    </motion.a>
-                </motion.div>
-            </div>
+                    </a>
+                </div>
 
-            <style>{`
-                @keyframes shimmer {
-                    0% { transform: translateX(-100%); }
-                    100% { transform: translateX(100%); }
-                }
-            `}</style>
+                <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2">
+                    {projects.map((project, index) => (
+                        <motion.article
+                            key={project.title}
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true, amount: 0.2 }}
+                            transition={{ duration: 0.55, delay: index * 0.06 }}
+                            className={`overflow-hidden rounded-2xl border ${isDark ? 'border-white/10 bg-white/[0.04]' : 'border-slate-200 bg-white shadow-sm'}`}
+                        >
+                            <div className="aspect-[16/9] overflow-hidden">
+                                <img src={project.image} alt="" className="h-full w-full object-cover transition duration-500 hover:scale-[1.03]" loading="lazy" />
+                            </div>
+                            <div className="p-6">
+                                <h3 className={`text-xl font-black ${isDark ? 'text-white' : 'text-slate-950'}`}>{project.title}</h3>
+                                <p className={`mt-3 leading-7 ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>{project.description}</p>
+                                <div className="mt-5 flex flex-wrap gap-2">
+                                    {project.tags.map((tag) => (
+                                        <span key={tag} className={`rounded-lg border px-3 py-1.5 text-xs font-bold ${isDark ? 'border-white/10 bg-white/[0.04] text-slate-300' : 'border-slate-200 bg-slate-50 text-slate-600'}`}>
+                                            {tag}
+                                        </span>
+                                    ))}
+                                </div>
+                            </div>
+                        </motion.article>
+                    ))}
+                </div>
+            </motion.div>
         </section>
     );
 };

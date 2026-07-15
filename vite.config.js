@@ -27,14 +27,13 @@ export default defineConfig({
         comments: false,
       }
     },
-    rollupOptions: {
-      output: {
-        manualChunks: {
-          'vendor-react': ['react', 'react-dom'],
-          'vendor-framer': ['framer-motion'],
-          'vendor-other': ['@heroui/react', 'react-router-dom', '@emailjs/browser'],
-        },
-      },
+        rollupOptions: {
+            output: {
+                manualChunks: {
+                  'vendor-react': ['react', 'react-dom'],
+                  'vendor-framer': ['framer-motion'],
+                },
+              },
     },
     sourcemap: false,
     target: 'es2020',
@@ -46,13 +45,8 @@ export default defineConfig({
     reportCompressedSize: false,
   },
   optimizeDeps: {
-    include: ['react', 'react-dom', 'framer-motion', 'gsap', 'lenis', 'color'],
+    include: ['react', 'react-dom', 'framer-motion'],
     exclude: [],
-    esbuildOptions: {
-      define: {
-        global: 'globalThis'
-      }
-    }
   },
   esbuild: {
     legalComments: 'none',

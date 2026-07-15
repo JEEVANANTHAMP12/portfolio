@@ -1,10 +1,7 @@
-import { heroui } from "@heroui/react";
-
 export default {
   content: [
     './index.html',
     './src/**/*.{js,jsx,ts,tsx}',
-    './node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
     extend: {
@@ -21,23 +18,11 @@ export default {
         },
       },
       animation: {
-        gradient: 'gradientFlow 1.5s ease infinite',
+        gradient: 'gradientFlow 3s ease infinite',
         float: 'gentleFloat 8s ease-in-out infinite',
       },
     },
   },
-  darkMode: "class",
-  plugins: [heroui({
-    themes: {
-      dark: {
-        colors: {
-          primary: {
-            DEFAULT: "#8B5CF6",
-            foreground: "#ffffff",
-          },
-          background: "#000000",
-        },
-      },
-    },
-  })],
+  darkMode: 'class',
+  plugins: [],
 }
