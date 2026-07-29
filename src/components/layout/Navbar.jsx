@@ -9,6 +9,7 @@ const navLinks = [
     ['Skills', '#skills'],
     ['Projects', '#projects'],
     ['Experience', '#experience'],
+    ['Certificates', '#certificates'],
     ['Contact', '#contact'],
 ];
 
@@ -70,7 +71,7 @@ const Navbar = () => {
                     </div>
 
                     <div className="flex items-center gap-2">
-                        <a href="#contact" className={`hidden rounded-lg px-4 py-2 text-sm font-bold transition md:inline-flex ${isDark ? 'bg-cyan-400 text-slate-950 hover:bg-cyan-300' : 'bg-slate-950 text-white hover:bg-slate-800'}`}>
+                        <a href="#contact" className={`hidden rounded-lg px-4 py-2 text-sm font-bold transition md:inline-flex ${isDark ? 'bg-indigo-500 text-white hover:bg-indigo-400' : 'bg-slate-950 text-white hover:bg-slate-800'}`}>
                             Hire Me
                         </a>
                         <ToggleTheme animationType="diag-down-right" duration={350} className={isDark ? 'text-slate-300' : 'text-slate-700'} />

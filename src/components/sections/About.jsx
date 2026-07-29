@@ -42,7 +42,7 @@ const About = () => {
             >
                 <div className="grid grid-cols-1 gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
                     <div>
-                        <p className={`section-eyebrow ${isDark ? 'text-cyan-300' : 'text-cyan-700'}`}>About</p>
+                        <p className={`section-eyebrow ${isDark ? 'text-indigo-400' : 'text-indigo-600'}`}>About</p>
                         <h2 className={`mt-3 text-4xl font-black tracking-tight sm:text-5xl ${isDark ? 'text-white' : 'text-slate-950'}`}>
                             A developer focused on useful, polished interfaces.
                         </h2>
@@ -58,7 +58,7 @@ const About = () => {
                         {highlights.map((item) => (
                             <div key={item.title} className={`rounded-2xl border p-6 ${isDark ? 'border-white/10 bg-white/[0.04]' : 'border-slate-200 bg-slate-50'}`}>
                                 <div className="flex gap-4">
-                                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-cyan-500/15 text-cyan-400">
+                                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-indigo-500/15 text-indigo-500">
                                         <item.icon className="h-5 w-5" />
                                     </div>
                                     <div>

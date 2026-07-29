@@ -7,6 +7,7 @@ import ScrollToTop from './components/common/ScrollToTop';
 const About = lazy(() => import('./components/sections/About'));
 const Skills = lazy(() => import('./components/sections/Skills'));
 const Experience = lazy(() => import('./components/sections/Experience'));
+const Certificates = lazy(() => import('./components/sections/Certificates'));
 const Projects = lazy(() => import('./components/sections/Projects'));
 const Contact = lazy(() => import('./components/sections/Contact'));
 const Footer = lazy(() => import('./components/layout/Footer'));
@@ -14,7 +15,7 @@ const Footer = lazy(() => import('./components/layout/Footer'));
 const SectionLoader = ({ isDark }) => (
     <div className={`flex min-h-72 items-center justify-center ${isDark ? 'bg-neutral-950' : 'bg-white'}`}>
         <div className="relative">
-            <div className={`h-8 w-8 animate-spin rounded-full border-2 ${isDark ? 'border-white/10 border-t-cyan-400' : 'border-slate-200 border-t-cyan-600'}`} />
+            <div className={`h-8 w-8 animate-spin rounded-full border-2 ${isDark ? 'border-white/10 border-t-indigo-400' : 'border-slate-200 border-t-indigo-600'}`} />
         </div>
     </div>
 );
@@ -34,6 +35,7 @@ function AppContent() {
                     <Skills />
                     <Projects />
                     <Experience />
+                    <Certificates />
                     <Contact />
                     <Footer />
                 </Suspense>

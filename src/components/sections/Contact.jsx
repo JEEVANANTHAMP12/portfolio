@@ -61,7 +61,7 @@ const Contact = () => {
         }
     }, [formData]);
 
-    const inputClasses = `w-full rounded-lg border px-4 py-3 text-sm outline-none transition focus:border-cyan-400 focus:ring-4 focus:ring-cyan-400/10 ${
+    const inputClasses = `w-full rounded-lg border px-4 py-3 text-sm outline-none transition focus:border-indigo-400 focus:ring-4 focus:ring-indigo-400/10 ${
         isDark ? 'border-white/10 bg-white/[0.04] text-white placeholder:text-slate-500' : 'border-slate-200 bg-white text-slate-950 placeholder:text-slate-400'
     }`;
 
@@ -75,7 +75,7 @@ const Contact = () => {
                 transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
             >
                 <div>
-                    <p className={`section-eyebrow ${isDark ? 'text-cyan-300' : 'text-cyan-700'}`}>Contact</p>
+                    <p className={`section-eyebrow ${isDark ? 'text-indigo-400' : 'text-indigo-600'}`}>Contact</p>
                     <h2 className={`mt-3 text-4xl font-black tracking-tight sm:text-5xl ${isDark ? 'text-white' : 'text-slate-950'}`}>
                         Let us discuss a project or opportunity.
                     </h2>
@@ -90,7 +90,7 @@ const Contact = () => {
                                 href={href}
                                 target={href.startsWith('mailto') ? undefined : '_blank'}
                                 rel={href.startsWith('mailto') ? undefined : 'noopener noreferrer'}
-                                className={`block rounded-xl border p-4 transition ${isDark ? 'border-white/10 bg-white/[0.04] hover:border-cyan-300/40' : 'border-slate-200 bg-white shadow-sm hover:border-cyan-500'}`}
+                                className={`block rounded-xl border p-4 transition ${isDark ? 'border-white/10 bg-white/[0.04] hover:border-indigo-400/40' : 'border-slate-200 bg-white shadow-sm hover:border-indigo-500'}`}
                             >
                                 <p className={`text-sm font-bold ${isDark ? 'text-white' : 'text-slate-950'}`}>{label}</p>
                                 <p className={`mt-1 text-sm ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>{value}</p>
@@ -144,7 +144,7 @@ const Contact = () => {
                         </label>
 
                         <label className={`flex items-start gap-3 text-sm ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>
-                            <input className="mt-1 h-4 w-4 rounded border-slate-300 text-cyan-500 focus:ring-cyan-500" type="checkbox" name="agreeToPolicy" checked={formData.agreeToPolicy} onChange={handleChange} required />
+                            <input className="mt-1 h-4 w-4 rounded border-slate-300 text-indigo-500 focus:ring-indigo-500" type="checkbox" name="agreeToPolicy" checked={formData.agreeToPolicy} onChange={handleChange} required />
                             <span>
                                 I agree to the{' '}
                                 <button type="button" onClick={() => setShowPolicy(true)} className={`font-semibold underline ${isDark ? 'text-white' : 'text-slate-950'}`}>
@@ -157,7 +157,7 @@ const Contact = () => {
                         <button
                             type="submit"
                             disabled={isSubmitting || !formData.agreeToPolicy}
-                            className="flex w-full items-center justify-center rounded-lg bg-cyan-500 px-6 py-3 text-sm font-black text-slate-950 transition hover:bg-cyan-400 disabled:cursor-not-allowed disabled:opacity-50"
+                            className="flex w-full items-center justify-center rounded-lg bg-indigo-500 px-6 py-3 text-sm font-black text-white transition hover:bg-indigo-400 disabled:cursor-not-allowed disabled:opacity-50"
                         >
                             {isSubmitting ? 'Sending...' : 'Send Message'}
                         </button>

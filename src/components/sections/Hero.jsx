@@ -33,7 +33,7 @@ const Hero = () => {
         <section id="home" className="relative isolate min-h-screen overflow-hidden pt-28">
             <div className={`absolute inset-0 ${isDark ? 'bg-neutral-950' : 'bg-slate-50'}`} />
             <div className={`absolute inset-0 opacity-70 ${isDark ? 'professional-grid-dark' : 'professional-grid-light'}`} />
-            <div className="absolute left-1/2 top-0 h-[520px] w-[520px] -translate-x-1/2 rounded-full bg-cyan-500/10 blur-3xl" />
+            <div className="absolute left-1/2 top-0 h-[520px] w-[520px] -translate-x-1/2 rounded-full bg-indigo-500/10 blur-3xl" />
 
             <div className="relative z-10 mx-auto grid min-h-[calc(100vh-7rem)] max-w-7xl grid-cols-1 items-center gap-12 px-4 pb-16 sm:px-6 md:px-8 lg:grid-cols-[1.15fr_0.85fr]">
                 <motion.div
@@ -46,7 +46,7 @@ const Hero = () => {
                         Available for frontend and AI-focused work
                     </div>
 
-                    <p className={`mb-4 text-sm font-semibold uppercase tracking-[0.22em] ${isDark ? 'text-cyan-300' : 'text-cyan-700'}`}>
+                    <p className={`mb-4 text-sm font-semibold uppercase tracking-[0.22em] ${isDark ? 'text-indigo-400' : 'text-indigo-600'}`}>
                         Frontend Developer
                     </p>
                     <h1 className={`max-w-4xl text-5xl font-black leading-[0.98] tracking-tight sm:text-6xl lg:text-7xl ${isDark ? 'text-white' : 'text-slate-950'}`}>
@@ -57,7 +57,7 @@ const Hero = () => {
                     </p>
 
                     <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-                        <a href="#projects" className="inline-flex items-center justify-center rounded-lg bg-cyan-500 px-6 py-3 text-sm font-bold text-slate-950 transition hover:bg-cyan-400">
+                        <a href="#projects" className="inline-flex items-center justify-center rounded-lg bg-indigo-500 px-6 py-3 text-sm font-bold text-white transition hover:bg-indigo-400">
                             View Projects
                             <svg className="ml-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -76,7 +76,7 @@ const Hero = () => {
                                 target={social.label === 'Email' ? undefined : '_blank'}
                                 rel={social.label === 'Email' ? undefined : 'noopener noreferrer'}
                                 aria-label={social.label}
-                                className={`flex h-11 w-11 items-center justify-center rounded-lg border transition ${isDark ? 'border-white/10 bg-white/5 text-slate-300 hover:border-cyan-300 hover:text-white' : 'border-slate-200 bg-white text-slate-600 shadow-sm hover:border-cyan-600 hover:text-slate-950'}`}
+                                className={`flex h-11 w-11 items-center justify-center rounded-lg border transition ${isDark ? 'border-white/10 bg-white/5 text-slate-300 hover:border-indigo-400 hover:text-white' : 'border-slate-200 bg-white text-slate-600 shadow-sm hover:border-indigo-500 hover:text-slate-950'}`}
                             >
                                 <svg className="h-5 w-5" fill={social.label === 'Email' ? 'none' : 'currentColor'} stroke={social.label === 'Email' ? 'currentColor' : 'none'} viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={social.label === 'Email' ? 2 : undefined} d={social.icon} />
@@ -109,7 +109,7 @@ const Hero = () => {
                                 'Accessible forms and clear user flows',
                             ].map((item) => (
                                 <div key={item} className={`flex items-center gap-3 rounded-lg border px-4 py-3 ${isDark ? 'border-white/10 bg-white/[0.03]' : 'border-slate-200 bg-white'}`}>
-                                    <span className="flex h-6 w-6 items-center justify-center rounded-md bg-cyan-500/15 text-cyan-400">
+                                    <span className="flex h-6 w-6 items-center justify-center rounded-md bg-indigo-500/15 text-indigo-500">
                                         <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                                         </svg>

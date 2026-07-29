@@ -43,7 +43,7 @@ const Projects = () => {
             >
                 <div className="flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
                     <div className="max-w-3xl">
-                        <p className={`section-eyebrow ${isDark ? 'text-cyan-300' : 'text-cyan-700'}`}>Projects</p>
+                        <p className={`section-eyebrow ${isDark ? 'text-indigo-400' : 'text-indigo-600'}`}>Projects</p>
                         <h2 className={`mt-3 text-4xl font-black tracking-tight sm:text-5xl ${isDark ? 'text-white' : 'text-slate-950'}`}>
                             Selected work and project concepts.
                         </h2>
