@@ -74,7 +74,7 @@ const Experience = () => {
     const { isDark } = useTheme();
 
     return (
-        <section id="experience" className={`relative py-24 md:py-32 ${isDark ? 'bg-neutral-950' : 'bg-slate-50'}`}>
+        <section id="experience" className={`relative py-16 md:py-24 ${isDark ? 'bg-neutral-950' : 'bg-slate-50'}`}>
             {/* Ambient Blobs */}
             <div className="pointer-events-none absolute -left-40 top-1/3 h-96 w-96 rounded-full bg-indigo-500/10 blur-3xl" />
             <div className="pointer-events-none absolute -right-40 bottom-1/3 h-96 w-96 rounded-full bg-purple-500/10 blur-3xl" />
@@ -86,13 +86,13 @@ const Experience = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.15 }}
                     transition={{ duration: 0.6 }}
-                    className="max-w-3xl mb-12"
+                    className="max-w-3xl mb-6"
                 >
                     <p className={`section-eyebrow ${isDark ? 'text-indigo-400' : 'text-indigo-600'}`}>Education & Journey</p>
                     <h2 className={`mt-2 text-3xl sm:text-4xl md:text-5xl font-black tracking-tight ${isDark ? 'text-white' : 'text-slate-950'}`}>
                         Experience & Schooling.
                     </h2>
-                    <p className={`mt-3 text-base sm:text-lg leading-7 ${isDark ? 'text-slate-300' : 'text-slate-600'}`}>
+                    <p className={`mt-2.5 text-base sm:text-lg leading-7 ${isDark ? 'text-slate-300' : 'text-slate-600'}`}>
                         Scroll down to explore my academic background and engineering journey. Cards stack smoothly as you scroll.
                     </p>
                 </motion.div>
@@ -100,23 +100,23 @@ const Experience = () => {
                 {/* SCROLL STACK COMPONENT */}
                 <ScrollStack
                     useWindowScroll={true}
-                    itemDistance={80}
-                    itemScale={0.03}
-                    itemStackDistance={24}
-                    stackPosition="18%"
-                    scaleEndPosition="10%"
-                    baseScale={0.88}
+                    itemDistance={40}
+                    itemScale={0.02}
+                    itemStackDistance={16}
+                    stackPosition="100px"
+                    scaleEndPosition="60px"
+                    baseScale={0.92}
                 >
                     {experiences.map((item) => (
                         <ScrollStackItem key={item.id}>
                             <div
-                                className={`w-full rounded-3xl border p-6 sm:p-8 md:p-10 transition-colors duration-300 shadow-2xl ${isDark
+                                className={`w-full rounded-3xl border p-6 sm:p-8 md:p-9 transition-colors duration-300 shadow-2xl ${isDark
                                         ? 'bg-neutral-900/95 border-white/15 text-white shadow-black/80'
                                         : 'bg-white border-slate-200/90 text-slate-900 shadow-slate-300/60'
                                     }`}
                             >
                                 {/* Header Row */}
-                                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 border-b border-white/10 pb-4 mb-5">
+                                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 border-b border-white/10 pb-4 mb-4">
                                     <div className="flex items-center gap-3">
                                         <span
                                             className="h-3.5 w-3.5 rounded-full shrink-0"
@@ -146,12 +146,12 @@ const Experience = () => {
                                 </div>
 
                                 {/* Description */}
-                                <p className={`text-sm sm:text-base leading-relaxed mb-6 ${isDark ? 'text-slate-300' : 'text-slate-600'}`}>
+                                <p className={`text-sm sm:text-base leading-relaxed mb-5 ${isDark ? 'text-slate-300' : 'text-slate-600'}`}>
                                     {item.description}
                                 </p>
 
                                 {/* Highlights */}
-                                <div className="mb-6 space-y-2.5">
+                                <div className="mb-5 space-y-2">
                                     {item.highlights.map((h, idx) => (
                                         <div key={idx} className="flex items-start gap-2.5 text-xs sm:text-sm">
                                             <svg className="h-4 w-4 mt-0.5 text-indigo-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
