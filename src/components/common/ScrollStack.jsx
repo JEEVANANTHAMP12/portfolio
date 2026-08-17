@@ -286,15 +286,9 @@ const ScrollStack = ({
     };
 
     window.addEventListener('resize', handleResize, { passive: true });
-    if (useWindowScroll) {
-      window.addEventListener('scroll', handleScroll, { passive: true });
-    }
 
     return () => {
       window.removeEventListener('resize', handleResize);
-      if (useWindowScroll) {
-        window.removeEventListener('scroll', handleScroll);
-      }
       if (animationFrameRef.current) {
         cancelAnimationFrame(animationFrameRef.current);
       }

@@ -1,11 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-// Check if user prefers reduced motion
-const prefersReducedMotion = () => {
-    return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-};
-
 // Book Icon
 export const BookIcon = ({ className = "w-6 h-6" }) => (
     <svg

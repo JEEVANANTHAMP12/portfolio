@@ -76,8 +76,8 @@
       .loader-text{font-size:12px;color:rgba(255,255,255,0.42);letter-spacing:.14em;text-transform:uppercase;font-weight:700}
       @keyframes spin{to{transform:rotate(360deg)}}
     </style>
-    <script type="module" crossorigin src="/assets/index-CLsgvBKE.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-D3DSpYhm.css">
+    <script type="module" crossorigin src="/assets/index-B3Gzl9r_.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-C_k4Af0t.css">
   </head>
   <body>
     <div id="root">
@@ -93,6 +93,7 @@
           loader.style.opacity = '0';
           loader.style.transition = 'opacity 0.4s ease';
           setTimeout(function() { loader.remove(); }, 400);
+          observer.disconnect();
         }
       });
       observer.observe(document.getElementById('root'), { childList: true, subtree: true });

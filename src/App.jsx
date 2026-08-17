@@ -3,6 +3,7 @@ import { ThemeProvider, useTheme } from './context/ThemeContext';
 import Navbar from './components/layout/Navbar';
 import Hero from './components/sections/Hero';
 import ScrollToTop from './components/common/ScrollToTop';
+import AppRoutes from './AppRoutes';
 
 const About = lazy(() => import('./components/sections/About'));
 const Skills = lazy(() => import('./components/sections/Skills'));
@@ -20,7 +21,7 @@ const SectionLoader = ({ isDark }) => (
     </div>
 );
 
-function AppContent() {
+function HomeContent() {
     const { isDark } = useTheme();
 
     return (
@@ -49,7 +50,7 @@ function AppContent() {
 function App() {
     return (
         <ThemeProvider>
-            <AppContent />
+            <AppRoutes HomeContent={HomeContent} />
         </ThemeProvider>
     );
 }

@@ -37,7 +37,6 @@ export default defineConfig({
     },
     sourcemap: false,
     target: 'es2020',
-    minifyInternalizedModules: true,
     modulePreload: false,
     chunkSizeWarningLimit: 700,
     cssCodeSplit: true,

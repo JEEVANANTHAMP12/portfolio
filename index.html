@@ -92,6 +92,7 @@
           loader.style.opacity = '0';
           loader.style.transition = 'opacity 0.4s ease';
           setTimeout(function() { loader.remove(); }, 400);
+          observer.disconnect();
         }
       });
       observer.observe(document.getElementById('root'), { childList: true, subtree: true });

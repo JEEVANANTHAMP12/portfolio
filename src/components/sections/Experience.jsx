@@ -116,7 +116,7 @@ const Experience = () => {
                                     }`}
                             >
                                 {/* Header Row */}
-                                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 border-b border-white/10 pb-4 mb-4">
+                                <div className={`flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 border-b pb-4 mb-4 ${isDark ? 'border-white/10' : 'border-slate-200'}`}>
                                     <div className="flex items-center gap-3">
                                         <span
                                             className="h-3.5 w-3.5 rounded-full shrink-0"
@@ -163,7 +163,7 @@ const Experience = () => {
                                 </div>
 
                                 {/* Tags */}
-                                <div className="flex flex-wrap items-center justify-between gap-3 pt-4 border-t border-white/5">
+                                <div className={`flex flex-wrap items-center justify-between gap-3 pt-4 border-t ${isDark ? 'border-white/5' : 'border-slate-200'}`}>
                                     <div className="flex flex-wrap gap-2">
                                         {item.tags.map((tag) => (
                                             <span
