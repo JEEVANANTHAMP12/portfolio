@@ -3,6 +3,7 @@ import { ThemeProvider, useTheme } from './context/ThemeContext';
 import Navbar from './components/layout/Navbar';
 import Hero from './components/sections/Hero';
 import ScrollToTop from './components/common/ScrollToTop';
+import ChatAssistant from './components/common/ChatAssistant';
 import AppRoutes from './AppRoutes';
 
 const About = lazy(() => import('./components/sections/About'));
@@ -43,6 +44,7 @@ function HomeContent() {
             </main>
             
             <ScrollToTop />
+            <ChatAssistant />
         </>
     );
 }

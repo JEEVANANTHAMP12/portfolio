@@ -319,7 +319,11 @@ const ScrollStack = ({
   ]);
 
   return (
-    <div className={`scroll-stack-scroller ${className}`.trim()} ref={scrollerRef}>
+    <div
+      className={`scroll-stack-scroller ${className}`.trim()}
+      ref={scrollerRef}
+      style={useWindowScroll ? { height: 'auto', overflow: 'visible' } : undefined}
+    >
       <div className="scroll-stack-inner">
         {children}
         {/* Spacer so the last pin can release cleanly */}

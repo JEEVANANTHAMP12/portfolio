@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { useTheme } from '../../context/ThemeContext';
 
 const metrics = [
-    { value: '6+', label: 'Projects shipped' },
+    { value: '5+', label: 'Projects shipped' },
     { value: '12+', label: 'Core tools' },
     { value: 'AI/DS', label: 'Degree focus' },
 ];

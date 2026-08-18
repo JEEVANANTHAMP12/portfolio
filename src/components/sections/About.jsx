@@ -23,7 +23,7 @@ const highlights = [
 
 const stats = [
     ['1+', 'Year learning and building'],
-    ['6+', 'Portfolio projects'],
+    ['5+', 'Portfolio projects'],
     ['React', 'Primary frontend stack'],
     ['AI/DS', 'Academic specialization'],
 ];
