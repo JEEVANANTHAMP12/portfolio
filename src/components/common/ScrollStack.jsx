@@ -214,6 +214,7 @@ const ScrollStack = ({
       animationFrameRef.current = requestAnimationFrame(raf);
 
       lenisRef.current = lenis;
+      window.__lenis = lenis;
       return lenis;
     } else {
       const scroller = scrollerRef.current;

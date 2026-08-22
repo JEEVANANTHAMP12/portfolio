@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback, memo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTheme } from '../../context/ThemeContext';
 
@@ -177,15 +177,18 @@ const Projects = () => {
         };
 
         if (activeProject) {
+            if (window.__lenis) window.__lenis.stop();
             document.body.style.overflow = 'hidden';
             document.documentElement.style.overflow = 'hidden';
             window.addEventListener('keydown', handleKeyDown);
         } else {
+            if (window.__lenis) window.__lenis.start();
             document.body.style.overflow = '';
             document.documentElement.style.overflow = '';
         }
 
         return () => {
+            if (window.__lenis) window.__lenis.start();
             document.body.style.overflow = '';
             document.documentElement.style.overflow = '';
             window.removeEventListener('keydown', handleKeyDown);
@@ -238,18 +241,15 @@ const Projects = () => {
                 </motion.div>
 
                 {/* Project Grid */}
-                <motion.div 
-                    layout
+                <div 
                     className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3"
                 >
-                    <AnimatePresence>
                         {projects.map((project, index) => (
                             <motion.article
-                                layout
                                 key={project.id}
                                 initial={{ opacity: 0, y: 30 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                exit={{ opacity: 0, scale: 0.95 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true, amount: 0.1 }}
                                 transition={{ duration: 0.5, delay: index * 0.05 }}
                                 className={`group relative flex flex-col overflow-hidden rounded-2xl border transition-all duration-500 hover:-translate-y-1.5 ${
                                     isDark
@@ -265,7 +265,11 @@ const Projects = () => {
                                     <img
                                         src={project.image}
                                         alt={project.title}
-                                        className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                                        width={900}
+                                        height={506}
+                                        decoding="async"
+                                        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                                        className="h-full w-full object-cover transition-transform duration-300 ease-out group-hover:scale-105"
                                         loading="lazy"
                                     />
                                     <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/80 via-neutral-950/20 to-transparent" />
@@ -279,7 +283,7 @@ const Projects = () => {
                                     </div>
 
                                     {/* Action Hover Quick View */}
-                                    <div className="absolute inset-0 bg-neutral-950/60 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-3 p-4">
+                                    <div className="absolute inset-0 bg-neutral-950/60 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center gap-3 p-4">
                                         <button
                                             onClick={() => { setActiveProject(project); setActiveModalTab('overview'); }}
                                             className="px-4 py-2.5 rounded-xl bg-white text-slate-950 text-xs font-extrabold flex items-center gap-2 transform transition hover:scale-105 shadow-lg"
@@ -360,8 +364,7 @@ const Projects = () => {
                                 </div>
                             </motion.article>
                         ))}
-                    </AnimatePresence>
-                </motion.div>
+                </div>
             </div>
 
             {/* High-Z-Index Modal Dialog Window */}
@@ -369,7 +372,6 @@ const Projects = () => {
                 {activeProject && (
                     <div 
                         className="fixed inset-0 z-[99999] flex items-center justify-center p-3 sm:p-4 md:p-6"
-                        onWheel={(e) => e.stopPropagation()}
                     >
                         {/* Backdrop */}
                         <motion.div
@@ -377,7 +379,7 @@ const Projects = () => {
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
                             onClick={() => setActiveProject(null)}
-                            className="fixed inset-0 bg-neutral-950/85 backdrop-blur-md z-[99999]"
+                            className="fixed inset-0 bg-neutral-950/85 backdrop-blur-sm z-[99999]"
                         />
 
                         {/* Modal Window Card */}
@@ -583,4 +585,4 @@ const Projects = () => {
     );
 };
 
-export default Projects;
+export default memo(Projects);

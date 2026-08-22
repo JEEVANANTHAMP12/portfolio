@@ -63,9 +63,17 @@ const Contact = () => {
 
     React.useEffect(() => {
         if (!showPolicy) return;
+        if (window.__lenis) window.__lenis.stop();
+        document.body.style.overflow = 'hidden';
+        document.documentElement.style.overflow = 'hidden';
         const handleEscape = (e) => { if (e.key === 'Escape') setShowPolicy(false); };
         window.addEventListener('keydown', handleEscape);
-        return () => window.removeEventListener('keydown', handleEscape);
+        return () => {
+            if (window.__lenis) window.__lenis.start();
+            document.body.style.overflow = '';
+            document.documentElement.style.overflow = '';
+            window.removeEventListener('keydown', handleEscape);
+        };
     }, [showPolicy]);
 
     const inputClasses = `w-full rounded-lg border px-4 py-3 text-sm outline-none transition focus:border-indigo-400 focus:ring-4 focus:ring-indigo-400/10 ${
